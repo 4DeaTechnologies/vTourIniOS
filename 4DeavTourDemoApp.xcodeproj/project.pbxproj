@@ -85,13 +85,13 @@
 			children = (
 				1C355A001E7BB1980082F427 /* AppDelegate.h */,
 				1C355A011E7BB1980082F427 /* AppDelegate.m */,
-				1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */,
-				1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */,
 				1C355A031E7BB34A0082F427 /* SimplevTourController.h */,
 				1C355A041E7BB34A0082F427 /* SimplevTourController.m */,
-				1C3559CB1E7BB0040082F427 /* Supporting Files */,
 				1C355A061E7BBA460082F427 /* SimpleVRController.h */,
 				1C355A071E7BBA460082F427 /* SimpleVRController.m */,
+				1C3559CB1E7BB0040082F427 /* Supporting Files */,
+				1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */,
+				1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */,
 			);
 			path = 4DeavTourDemoApp;
 			sourceTree = "<group>";
