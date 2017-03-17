@@ -13,7 +13,6 @@
 #import "VRController.h"
 
 @interface vTourController ()<ViewerControllerProtocol,UICollectionViewDelegate,UICollectionViewDataSource>{
-    vTourView *vtourView;
     UITextView *textView;
     int currentScene;
     NSDate *startTime;
@@ -23,6 +22,7 @@
     DemoConstants *demoConstants;
 }
 @property (nonatomic,strong) NSDictionary *hotelsData;
+@property (nonatomic,strong) vTourView *vtourView;
 @end
 
 @implementation vTourController
@@ -35,13 +35,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Hotels" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     self.hotelsData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     // Do any additional setup after loading the view.
+    [self setupvTourView];
+    [self setupUI];
+}
+
+
+-(void)setupvTourView{
+    self.vtourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
+    [self.view addSubview:self.vtourView];
+    [self.vtourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; //Pass baseURL of cleartrip web server structure
+    [self.vtourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
+    
+    NSInteger hotelNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"Hotel_Number"];
+    NSArray *hotels = [self.hotelsData objectForKey:@"Hotels"];
+    NSDictionary *hotel = [hotels objectAtIndex:hotelNumber];
+    
+    [self.vtourView setShortURL:[hotel objectForKey:@"ShortURL"]];
+    //JSON URL would be something like: BaseURL + ShortURL + "/tourData.json"
+    // For Example: "https://cdn.cleartrip.com/" + "Polo_Forest" + "/tourData.json"
+    
+    //Images URL would be something like: BaseURL + ShortURL + "/Images/" + SceneName + "Thumbnail/thumb.jpg"
+    // For Example: "https://cdn.cleartrip.com/" + "Polo_Forest" + "/Images/" + "0ojas.jpg" + "Thumbnail/thumb.jpg"
+    
+    [self.vtourView enableArrow];
+    [self.vtourView setUserSwipeSpeed:2];
+    [self.vtourView downloadTourForUrl];
+}
+
+-(void)setupUI{
     
     textView = [[UITextView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height*0.4, self.view.frame.size.width, 0.3*self.view.frame.size.height)];
     [textView setText:@"Loading ..."];
@@ -53,31 +81,8 @@
     [textView setEditable:FALSE];
     [self.view addSubview:textView];
     
-    vtourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
-    [self.view addSubview:vtourView];
-    [vtourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; //Pass baseURL of cleartrip web server structure
-    [vtourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
-    
-    
-    NSInteger hotelNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"Hotel_Number"];
-    NSArray *hotels = [self.hotelsData objectForKey:@"Hotels"];
-    NSDictionary *hotel = [hotels objectAtIndex:hotelNumber];
-    
-    [vtourView setShortURL:[hotel objectForKey:@"ShortURL"]];
-    //JSON URL would be something like: BaseURL + ShortURL + "/tourData.json"
-    // For Example: "https://cdn.cleartrip.com/" + "Polo_Forest" + "/tourData.json"
-    
-    //Images URL would be something like: BaseURL + ShortURL + "/Images/" + SceneName + "Thumbnail/thumb.jpg"
-    // For Example: "https://cdn.cleartrip.com/" + "Polo_Forest" + "/Images/" + "0ojas.jpg" + "Thumbnail/thumb.jpg"
-    
-    [vtourView enableArrow];
-    [vtourView setUserSwipeSpeed:2];
-    
-    
-    
-    demoConstants = [[DemoConstants alloc]init];
-    
 
+    demoConstants = [[DemoConstants alloc]init];
     //Gyro Button
     if(demoConstants->makeGyroButtonVisible){
         UIButton *gyroButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
@@ -102,23 +107,6 @@
         [self.view addSubview:vrButton];
     }
     
-    
-    [vtourView downloadTourForUrl];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Protocol Callback Methods
-
--(void)thumbnailsURL:(NSArray *)thumbnailsURLs
-{
-    NSLog(@"Thumbnails Downloaded");
-    [self startDownloadingThumbnails:thumbnailsURLs];
-    
-    
     if(demoConstants->design == DESIGN1){
         [self setupCollectionView];
     }else if(demoConstants->design == DESIGN2){
@@ -126,50 +114,52 @@
     }
 }
 
+#pragma mark - Protocol Callback Methods
+
+-(void)thumbnailsURL:(NSArray *)thumbnailsURLs
+{
+    [self startDownloadingThumbnails:thumbnailsURLs];
+}
+
 -(void)onLowQualityLoaded{
     [textView removeFromSuperview];
 }
 
 -(void)sceneLoaded{
-    //    NSLog(@"Scene Loaded");
     if(!demoConstants->makeAutoplayOn){
-        [vtourView stopAutoplay];
+        [self.vtourView stopAutoplay];
     }
 }
 -(void)percentLoaded:(float)percent{
-    //    NSLog(@"Percent %f",percent);
+
 }
 
 -(void)tapInTourScene{
-    NSLog(@"User Tapped in Tour");
+
 }
 
 
 -(void)onAutoplayCompleted{
-    NSLog(@"Autoplay Completed");
+
 }
 
 -(void)onTourDataLoaded{
-    NSLog(@"Tour Data Loaded");
-    
-    currentScene = [vtourView getCurrentScene];
+    currentScene = [self.vtourView getCurrentScene];
     startTime = [NSDate date];
 }
 -(void)onArrowClicked{
-    NSLog(@"Arrow Clicked");
+    
 }
 -(void)onSceneChange{
-    NSLog(@"Scene Change");
     NSTimeInterval timeInterval = fabs([startTime timeIntervalSinceNow]);
-    NSLog(@"Time spent %f",timeInterval);
     [self timeSpent:timeInterval inSceneNumber:currentScene];
-    currentScene = [vtourView getCurrentScene];
+    currentScene = [self.vtourView getCurrentScene];
     startTime = [NSDate date];
     [self.view addSubview:textView];
 }
 
 -(void)onFailedToLoadTourData{
-    NSLog(@"Failed to load Tour Data");
+    
 }
 
 -(void)autoplayStopped{
@@ -178,12 +168,41 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [vtourView deleteTour]; //Tour dealloction method. (Required)
+    [self.vtourView deleteTour]; //Tour dealloction method. (Required)
+}
+
+-(void)gyroClicked{
+    [self.vtourView setGyroscopeOnOff];
+}
+
+-(void)vrClicked{
+    [self.vtourView pause];
+    VRController *vrController = [[VRController alloc]init];
+    [self presentViewController:vrController animated:YES completion:nil];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if(self.vtourView!=nil){
+        [self.vtourView resume];
+    }
+}
+
+#pragma mark - Sending data to Google Analytics
+- (void)timeSpent:(NSTimeInterval)timeSpent inSceneNumber:(int)sceneNumber{
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createTimingWithCategory:@"iOS - Time spent"
+                                                         interval:@((NSUInteger)(timeSpent * 1000))
+                                                             name:[@"iOS - Time spent in Scene-" stringByAppendingString:[NSString stringWithFormat:@"%d",sceneNumber]]
+                                                            label:nil] build]];
 }
 
 
+
+#pragma mark - Showing thumbnails Collection View
+
 -(void)startDownloadingThumbnails:(NSArray*)thumbnailsURLs{
-        thumbnailDownloadCount = 0;
         imagesOfThumnails = [[NSMutableArray alloc]initWithCapacity:thumbnailsURLs.count];
         for(int i =0;i<thumbnailsURLs.count;i++){
             [imagesOfThumnails addObject:[self imageWithColor:[UIColor colorWithRed:240.0/255.0 green:90.0/255.0 blue:40.0/255.0 alpha:1.0] andSize:CGSizeMake(300, 200)]];
@@ -193,20 +212,12 @@
                         if (succeeded) {
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [imagesOfThumnails replaceObjectAtIndex:i withObject:image];
-                                thumbnailDownloadCount++;
-                                if(thumbnailDownloadCount == thumbnailsURLs.count){
-                                    [self allThumbnailsDownloaded];
-                                }
                                 [thumbnailCollectionView reloadData];
                             });
                         }
                     }
                 }];
             }
-}
-
--(void)allThumbnailsDownloaded{
-    NSLog(@"All thumbnails Downloaded");
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size{
@@ -221,24 +232,6 @@
 }
 
 
-/*
- * Called after a list of high scores finishes loading.
- *
- * @param loadTime The time it takes to load a resource.
- */
-- (void)timeSpent:(NSTimeInterval)timeSpent inSceneNumber:(int)sceneNumber{
-    
-    // May return nil if a tracker has not already been initialized with a
-    // property ID.
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    
-    [tracker send:[[GAIDictionaryBuilder createTimingWithCategory:@"iOS - Time spent"
-                                                         interval:@((NSUInteger)(timeSpent * 1000))
-                                                             name:[@"iOS - Time spent in Scene-" stringByAppendingString:[NSString stringWithFormat:@"%d",sceneNumber]]
-                                                            label:nil] build]];
-    NSString *string =[@"iOS - Time spent in Scene-" stringByAppendingString:[NSString stringWithFormat:@"%d",sceneNumber]];
-    NSLog(@"Time Spent: %@",string);
-}
 
 -(void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock{
 
@@ -279,7 +272,11 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return imagesOfThumnails.count;
+    if(imagesOfThumnails.count!=0){
+        return imagesOfThumnails.count;
+    }else{
+        return 5;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -309,7 +306,7 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     NSLog(@"Selecting item at index: %ld",(long)indexPath.item);
-    [vtourView changeSceneToSceneNumer:(int)indexPath.item];
+    [self.vtourView changeSceneToSceneNumer:(int)indexPath.item];
 }
 
 #pragma mark - Design 2
@@ -362,36 +359,23 @@
 }
 
 -(void)leftArrowClicked{
-    int currentSceneNumber = [vtourView getCurrentScene];
+    int currentSceneNumber = [self.vtourView getCurrentScene];
     if(currentSceneNumber!=0){
-        [vtourView changeSceneToSceneNumer:currentSceneNumber-1];
+        [self.vtourView changeSceneToSceneNumer:currentSceneNumber-1];
     }
 }
 
 -(void)rightArrowCliced{
-    NSArray *scenesArray = [vtourView getSceneNames];
-    int currentSceneNumber = [vtourView getCurrentScene];
+    NSArray *scenesArray = [self.vtourView getSceneNames];
+    int currentSceneNumber = [self.vtourView getCurrentScene];
     if(currentSceneNumber<scenesArray.count-1){
-         [vtourView changeSceneToSceneNumer:currentSceneNumber+1];
+         [self.vtourView changeSceneToSceneNumer:currentSceneNumber+1];
     }
 }
 
--(void)gyroClicked{
-    [vtourView setGyroscopeOnOff];
-}
-
--(void)vrClicked{
-    [vtourView pause];
-//    [vtourView removeFromSuperview];
-    VRController *vrController = [[VRController alloc]init];
-    [self presentViewController:vrController animated:YES completion:nil];
-//    [vtourView resume];
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    if(vtourView!=nil){
-        [vtourView resume];
-    }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

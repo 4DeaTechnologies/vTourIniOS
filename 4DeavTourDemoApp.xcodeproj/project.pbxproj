@@ -94,8 +94,6 @@
 			children = (
 				1C355A001E7BB1980082F427 /* AppDelegate.h */,
 				1C355A011E7BB1980082F427 /* AppDelegate.m */,
-				1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */,
-				1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */,
 				1C3559E41E7BB04C0082F427 /* DemoConstants.h */,
 				1C3559E51E7BB04C0082F427 /* DemoConstants.m */,
 				1C3559E61E7BB04C0082F427 /* HotelViewController.h */,
@@ -106,6 +104,8 @@
 				1C3559EB1E7BB04C0082F427 /* VRController.m */,
 				1C3559EC1E7BB04C0082F427 /* vTourController.h */,
 				1C3559ED1E7BB04C0082F427 /* vTourController.m */,
+				1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */,
+				1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */,
 				1C3559CB1E7BB0040082F427 /* Supporting Files */,
 			);
 			path = 4DeavTourDemoApp;
