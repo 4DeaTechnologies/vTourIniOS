@@ -191,9 +191,16 @@
     
     id tracker = [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createTimingWithCategory:@"iOS - Time spent"
+    
+    NSInteger hotelNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"Hotel_Number"];
+    NSArray *hotels = [self.hotelsData objectForKey:@"Hotels"];
+    NSDictionary *hotel = [hotels objectAtIndex:hotelNumber];
+    
+    NSString *category = [@"iOS - " stringByAppendingString:[hotel objectForKey:@"ShortURL"]];
+    
+    [tracker send:[[GAIDictionaryBuilder createTimingWithCategory:category
                                                          interval:@((NSUInteger)(timeSpent * 1000))
-                                                             name:[@"iOS - Time spent in Scene-" stringByAppendingString:[NSString stringWithFormat:@"%d",sceneNumber]]
+                                                             name:[category stringByAppendingString:[@"Scene - " stringByAppendingString:[NSString stringWithFormat:@"%d",sceneNumber]]]
                                                             label:nil] build]];
 }
 
@@ -349,7 +356,7 @@
     [hotelName setTextColor:[UIColor whiteColor]];
     [hotelName setBackgroundColor:[UIColor clearColor]];
     [hotelName setTextAlignment:NSTextAlignmentCenter];
-    [hotelName setFont:[UIFont fontWithName:@"Helvetica-Bold" size:15.0]];
+    [hotelName setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.0]];
     [hotelName setScrollEnabled:FALSE];
     [hotelName setEditable:FALSE];
     [bottomView addSubview:hotelName];
