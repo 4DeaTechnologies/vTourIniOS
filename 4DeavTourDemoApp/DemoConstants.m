@@ -17,9 +17,9 @@
         makeVRButtonVisible = FALSE;
         makeGyroButtonVisible = FALSE;
         makeAutoplayOn = FALSE;
-        design = DESIGN1;
-        imageBaseURL = @"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/";
-        jsonBaseURL = @"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/";
+        design = DESIGN2;
+        imageBaseURL = @"https://dev-images.4dea.co/vtour/";
+        jsonBaseURL = @"https://360-tours-dev.4dea.co/vtour/";
     }
     return self;
 }
