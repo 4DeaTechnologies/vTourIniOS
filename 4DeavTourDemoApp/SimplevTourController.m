@@ -9,9 +9,11 @@
 #import "SimplevTourController.h"
 #import "SimpleVRController.h"
 #import <4DeavTourLibrary/vTourView.h>
+#import "DemoConstants.h"
 
 @interface SimplevTourController ()<ViewerControllerProtocol>
 @property (nonatomic,strong) vTourView *myvTourView;
+@property (nonatomic,strong) DemoConstants *demoConstants;
 @end
 
 @implementation SimplevTourController
@@ -19,15 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.demoConstants = [[DemoConstants alloc]init];
     [self setupvTourView];
     [self setupUI];
 }
 
 -(void)setupvTourView{
     self.myvTourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
-    [self.myvTourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; //Pass baseURL of cleartrip web server structure
-    [self.myvTourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
-    [self.myvTourView setShortURL:@"Polo_Forest"];
+    [self.myvTourView setBaseURL:self.demoConstants->imageBaseURL]; //Pass baseURL of cleartrip web server structure
+    [self.myvTourView setJSONBaseURL:self.demoConstants->jsonBaseURL];
+    [self.myvTourView setShortURL:@"TGBHotels_Ahmedabad"];
     [self.myvTourView setUserSwipeSpeed:2];
     [self.myvTourView downloadTourForUrl];
     

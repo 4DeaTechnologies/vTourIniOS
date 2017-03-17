@@ -21,6 +21,7 @@
 		1C355A021E7BB1980082F427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C355A011E7BB1980082F427 /* AppDelegate.m */; };
 		1C355A051E7BB34A0082F427 /* SimplevTourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C355A041E7BB34A0082F427 /* SimplevTourController.m */; };
 		1C355A081E7BBA460082F427 /* SimpleVRController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C355A071E7BBA460082F427 /* SimpleVRController.m */; };
+		1C355A0B1E7BEC420082F427 /* DemoConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C355A0A1E7BEC420082F427 /* DemoConstants.m */; };
 		3A84D749E22D828BF6FC4297 /* libPods-4DeavTourDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7188A7C0E82E12BC6862DCB7 /* libPods-4DeavTourDemoApp.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		1C355A041E7BB34A0082F427 /* SimplevTourController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplevTourController.m; sourceTree = "<group>"; };
 		1C355A061E7BBA460082F427 /* SimpleVRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleVRController.h; sourceTree = "<group>"; };
 		1C355A071E7BBA460082F427 /* SimpleVRController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleVRController.m; sourceTree = "<group>"; };
+		1C355A091E7BEC420082F427 /* DemoConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoConstants.h; sourceTree = "<group>"; };
+		1C355A0A1E7BEC420082F427 /* DemoConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoConstants.m; sourceTree = "<group>"; };
 		7188A7C0E82E12BC6862DCB7 /* libPods-4DeavTourDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-4DeavTourDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4C02A22F914B26C0CCA0ED /* Pods-4DeavTourDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-4DeavTourDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-4DeavTourDemoApp/Pods-4DeavTourDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ECA5C33D56F8439E153447F5 /* Pods-4DeavTourDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-4DeavTourDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-4DeavTourDemoApp/Pods-4DeavTourDemoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				1C3559CB1E7BB0040082F427 /* Supporting Files */,
 				1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */,
 				1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */,
+				1C355A091E7BEC420082F427 /* DemoConstants.h */,
+				1C355A0A1E7BEC420082F427 /* DemoConstants.m */,
 			);
 			path = 4DeavTourDemoApp;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				1C355A051E7BB34A0082F427 /* SimplevTourController.m in Sources */,
 				1C355A081E7BBA460082F427 /* SimpleVRController.m in Sources */,
 				1C3559CD1E7BB0040082F427 /* main.m in Sources */,
+				1C355A0B1E7BEC420082F427 /* DemoConstants.m in Sources */,
 				1C355A021E7BB1980082F427 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
