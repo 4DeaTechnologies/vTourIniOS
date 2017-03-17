@@ -24,6 +24,9 @@
 		1C3559FD1E7BB0660082F427 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F81E7BB0660082F427 /* right.png */; };
 		1C3559FE1E7BB0660082F427 /* thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F91E7BB0660082F427 /* thumb.jpg */; };
 		1C355A021E7BB1980082F427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C355A011E7BB1980082F427 /* AppDelegate.m */; };
+		1C355A241E7C17B40082F427 /* gyro.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C355A211E7C17B40082F427 /* gyro.png */; };
+		1C355A251E7C17B40082F427 /* vr_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C355A221E7C17B40082F427 /* vr_back.png */; };
+		1C355A261E7C17B40082F427 /* vr.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C355A231E7C17B40082F427 /* vr.png */; };
 		3A84D749E22D828BF6FC4297 /* libPods-4DeavTourDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7188A7C0E82E12BC6862DCB7 /* libPods-4DeavTourDemoApp.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		1C3559F91E7BB0660082F427 /* thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb.jpg; sourceTree = "<group>"; };
 		1C355A001E7BB1980082F427 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1C355A011E7BB1980082F427 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1C355A211E7C17B40082F427 /* gyro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gyro.png; sourceTree = "<group>"; };
+		1C355A221E7C17B40082F427 /* vr_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vr_back.png; sourceTree = "<group>"; };
+		1C355A231E7C17B40082F427 /* vr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vr.png; sourceTree = "<group>"; };
 		7188A7C0E82E12BC6862DCB7 /* libPods-4DeavTourDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-4DeavTourDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4C02A22F914B26C0CCA0ED /* Pods-4DeavTourDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-4DeavTourDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-4DeavTourDemoApp/Pods-4DeavTourDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ECA5C33D56F8439E153447F5 /* Pods-4DeavTourDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-4DeavTourDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-4DeavTourDemoApp/Pods-4DeavTourDemoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 		1C3559FF1E7BB0770082F427 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C355A211E7C17B40082F427 /* gyro.png */,
+				1C355A221E7C17B40082F427 /* vr_back.png */,
+				1C355A231E7C17B40082F427 /* vr.png */,
 				1C3559F71E7BB0660082F427 /* left.png */,
 				1C3559F81E7BB0660082F427 /* right.png */,
 				1C3559F91E7BB0660082F427 /* thumb.jpg */,
@@ -220,9 +229,12 @@
 				1C3559FD1E7BB0660082F427 /* right.png in Resources */,
 				1C3559D81E7BB0040082F427 /* Assets.xcassets in Resources */,
 				1C3559FA1E7BB0660082F427 /* GoogleService-Info.plist in Resources */,
+				1C355A261E7C17B40082F427 /* vr.png in Resources */,
 				1C3559EE1E7BB04C0082F427 /* 4DeavTourLibrary.bundle in Resources */,
+				1C355A241E7C17B40082F427 /* gyro.png in Resources */,
 				1C3559FC1E7BB0660082F427 /* left.png in Resources */,
 				1C3559D61E7BB0040082F427 /* Main.storyboard in Resources */,
+				1C355A251E7C17B40082F427 /* vr_back.png in Resources */,
 				1C3559FE1E7BB0660082F427 /* thumb.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
