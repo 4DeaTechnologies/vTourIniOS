@@ -41,6 +41,7 @@
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     self.hotelsData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
+    demoConstants = [[DemoConstants alloc]init];
     // Do any additional setup after loading the view.
     [self setupvTourView];
     [self setupUI];
@@ -50,8 +51,8 @@
 -(void)setupvTourView{
     self.vtourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
     [self.view addSubview:self.vtourView];
-    [self.vtourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; //Pass baseURL of cleartrip web server structure
-    [self.vtourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
+    [self.vtourView setBaseURL:demoConstants->imageBaseURL]; //Pass baseURL of cleartrip web server structure
+    [self.vtourView setJSONBaseURL:demoConstants->jsonBaseURL];
     
     NSInteger hotelNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"Hotel_Number"];
     NSArray *hotels = [self.hotelsData objectForKey:@"Hotels"];
@@ -82,7 +83,7 @@
     [self.view addSubview:textView];
     
 
-    demoConstants = [[DemoConstants alloc]init];
+    
     //Gyro Button
     if(demoConstants->makeGyroButtonVisible){
         UIButton *gyroButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
