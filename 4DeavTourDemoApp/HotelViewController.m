@@ -93,8 +93,6 @@
         @synchronized(self) {
             if (succeeded) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    NSLog(@"%@",url);
-                    NSLog(@"Thumbnail downloaded");
                     [spinner removeFromSuperview];
                     
                     [imageView setImage:image];
