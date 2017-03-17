@@ -25,8 +25,8 @@
     [self.view addSubview:self.vrModeView];
     
     UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
-    [backButton setImage:[UIImage imageNamed:@"left.png"] forState:UIControlStateNormal];
-    [backButton setCenter:CGPointMake(0.1*self.view.frame.size.width, 0.1*self.view.frame.size.height)];
+    [backButton setImage:[UIImage imageNamed:@"vr_back.png"] forState:UIControlStateNormal];
+    [backButton setCenter:CGPointMake(0.05*self.view.frame.size.width, 0.05*self.view.frame.size.height)];
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBackPressed)];
     singleTap.numberOfTapsRequired = 1;
     [backButton setUserInteractionEnabled:YES];
