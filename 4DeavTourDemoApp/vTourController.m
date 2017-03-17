@@ -49,7 +49,7 @@
     textView = [[UITextView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height*0.4, self.view.frame.size.width, 0.3*self.view.frame.size.height)];
     [textView setText:@"Loading ..."];
     [textView setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18.0]];
-    [textView setTextColor:[UIColor colorWithRed:76.0/255.0 green:175.0/255.0 blue:80.0/255.0 alpha:1.0]];
+    [textView setTextColor:[UIColor whiteColor]];
     [textView setTextAlignment:NSTextAlignmentCenter];
     [textView setBackgroundColor:[UIColor clearColor]];
     [textView setScrollEnabled:FALSE];
