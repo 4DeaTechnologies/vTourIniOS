@@ -87,8 +87,8 @@
     //Gyro Button
     if(demoConstants->makeGyroButtonVisible){
         UIButton *gyroButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
-        [gyroButton setImage:[UIImage imageNamed:@"left.png"] forState:UIControlStateNormal];
-        [gyroButton setCenter:CGPointMake(0.8*self.view.frame.size.width, 0.15*self.view.frame.size.height)];
+        [gyroButton setImage:[UIImage imageNamed:@"gyro.png"] forState:UIControlStateNormal];
+        [gyroButton setCenter:CGPointMake(0.8*self.view.frame.size.width, 0.1*self.view.frame.size.height)];
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gyroClicked)];
         singleTap.numberOfTapsRequired = 1;
         [gyroButton setUserInteractionEnabled:YES];
@@ -99,8 +99,8 @@
     //VR Button
     if(demoConstants->makeVRButtonVisible){
         UIButton *vrButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
-        [vrButton setImage:[UIImage imageNamed:@"right.png"] forState:UIControlStateNormal];
-        [vrButton setCenter:CGPointMake(0.9*self.view.frame.size.width, 0.15*self.view.frame.size.height)];
+        [vrButton setImage:[UIImage imageNamed:@"vr.png"] forState:UIControlStateNormal];
+        [vrButton setCenter:CGPointMake(0.9*self.view.frame.size.width, 0.1*self.view.frame.size.height)];
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(vrClicked)];
         singleTap.numberOfTapsRequired = 1;
         [vrButton setUserInteractionEnabled:YES];

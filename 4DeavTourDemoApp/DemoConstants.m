@@ -14,8 +14,8 @@
 {
     self = [super init];
     if (self) {
-        makeVRButtonVisible = FALSE;
-        makeGyroButtonVisible = FALSE;
+        makeVRButtonVisible = TRUE;
+        makeGyroButtonVisible = TRUE;
         makeAutoplayOn = FALSE;
         design = DESIGN2;
         imageBaseURL = @"https://dev-images.4dea.co/vtour/";
