@@ -11,8 +11,6 @@
 		1C3559D61E7BB0040082F427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559D41E7BB0040082F427 /* Main.storyboard */; };
 		1C3559D81E7BB0040082F427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559D71E7BB0040082F427 /* Assets.xcassets */; };
 		1C3559DB1E7BB0040082F427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559D91E7BB0040082F427 /* LaunchScreen.storyboard */; };
-		1C3559EE1E7BB04C0082F427 /* 4DeavTourLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */; };
-		1C3559EF1E7BB04C0082F427 /* 4DeavTourLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */; };
 		1C3559FA1E7BB0660082F427 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F51E7BB0660082F427 /* GoogleService-Info.plist */; };
 		1C3559FB1E7BB0660082F427 /* Hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F61E7BB0660082F427 /* Hotels.json */; };
 		1C3559FC1E7BB0660082F427 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F71E7BB0660082F427 /* left.png */; };
@@ -30,8 +28,6 @@
 		1C3559D71E7BB0040082F427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C3559DA1E7BB0040082F427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C3559DC1E7BB0040082F427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = 4DeavTourLibrary.bundle; sourceTree = "<group>"; };
-		1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = 4DeavTourLibrary.framework; sourceTree = "<group>"; };
 		1C3559F51E7BB0660082F427 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1C3559F61E7BB0660082F427 /* Hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Hotels.json; sourceTree = "<group>"; };
 		1C3559F71E7BB0660082F427 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
@@ -51,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3559EF1E7BB04C0082F427 /* 4DeavTourLibrary.framework in Frameworks */,
 				3A84D749E22D828BF6FC4297 /* libPods-4DeavTourDemoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,8 +77,6 @@
 			children = (
 				1C355A001E7BB1980082F427 /* AppDelegate.h */,
 				1C355A011E7BB1980082F427 /* AppDelegate.m */,
-				1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */,
-				1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */,
 				1C355A031E7BB34A0082F427 /* SimplevTourController.h */,
 				1C355A041E7BB34A0082F427 /* SimplevTourController.m */,
 				1C3559CB1E7BB0040082F427 /* Supporting Files */,
@@ -200,7 +193,6 @@
 				1C3559FD1E7BB0660082F427 /* right.png in Resources */,
 				1C3559D81E7BB0040082F427 /* Assets.xcassets in Resources */,
 				1C3559FA1E7BB0660082F427 /* GoogleService-Info.plist in Resources */,
-				1C3559EE1E7BB04C0082F427 /* 4DeavTourLibrary.bundle in Resources */,
 				1C3559FC1E7BB0660082F427 /* left.png in Resources */,
 				1C3559D61E7BB0040082F427 /* Main.storyboard in Resources */,
 				1C3559FE1E7BB0660082F427 /* thumb.jpg in Resources */,

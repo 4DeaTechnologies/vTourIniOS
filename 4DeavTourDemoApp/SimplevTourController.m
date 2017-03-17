@@ -7,30 +7,17 @@
 //
 
 #import "SimplevTourController.h"
-#import <4DeavTourLibrary/vTourView.h>
 
-@interface SimplevTourController ()<ViewerControllerProtocol>
-@property (nonatomic,strong) vTourView *myvTourView;
+@interface SimplevTourController ()
 @end
 
 @implementation SimplevTourController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor grayColor];
     
-    [self setupvTourView];
     [self setupUI];
-}
-
--(void)setupvTourView{
-    self.myvTourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
-    [self.myvTourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; //Pass baseURL of cleartrip web server structure
-    [self.myvTourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
-    [self.myvTourView setShortURL:@"Polo_Forest"];
-    [self.myvTourView setUserSwipeSpeed:2];
-    [self.myvTourView downloadTourForUrl];
-    
-    [self.view addSubview:self.myvTourView];
 }
 
 -(void)setupUI{
@@ -56,56 +43,10 @@
 
 #pragma mark - Call vTourMethods
 -(void)onGyroClicked{
-    [self.myvTourView setGyroscopeOnOff];
+    
 }
 
 -(void)onVRClicked{
-    
-}
-
-
-#pragma mark - Implementing callback methods for vTourView
--(void)thumbnailsURL:(NSArray*)thumbnailsURLArray{
-    
-}
-
--(void)onLowQualityLoaded{
-    
-}
-
--(void)sceneLoaded{
-    [self.myvTourView stopAutoplay];
-}
-
--(void)percentLoaded:(float)percent{
-    
-}
-
--(void)tapInTourScene{
-    
-}
-
--(void)onSceneChange{
-    
-}
-
--(void)onAutoplayCompleted{
-    
-}
-
--(void)onTourDataLoaded{
-    
-}
-
--(void)onArrowClicked{
-    
-}
-
--(void)onFailedToLoadTourData{
-    
-}
-
--(void)autoplayStopped{
     
 }
 
