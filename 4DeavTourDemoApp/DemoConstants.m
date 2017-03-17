@@ -18,6 +18,8 @@
         makeGyroButtonVisible = FALSE;
         makeAutoplayOn = FALSE;
         design = DESIGN1;
+        imageBaseURL = @"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/";
+        jsonBaseURL = @"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/";
     }
     return self;
 }
