@@ -7,6 +7,7 @@
 //
 
 #import "SimplevTourController.h"
+#import "SimpleVRController.h"
 #import <4DeavTourLibrary/vTourView.h>
 
 @interface SimplevTourController ()<ViewerControllerProtocol>
@@ -60,7 +61,10 @@
 }
 
 -(void)onVRClicked{
+    [self.myvTourView pause];
     
+    SimpleVRController *vrController = [[SimpleVRController alloc]init];
+    [self presentViewController:vrController animated:YES completion:nil];
 }
 
 
@@ -107,6 +111,13 @@
 
 -(void)autoplayStopped{
     
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    if(self.myvTourView!=nil){
+        [self.myvTourView resume];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
