@@ -12,9 +12,9 @@
 ## Mandatory Options to set before downloading vTour
 
 ```
-    [self.myvTourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; 
-    [self.myvTourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
-    [self.myvTourView setShortURL:@"Polo_Forest"];
+[self.myvTourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; 
+[self.myvTourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
+[self.myvTourView setShortURL:@"Polo_Forest"];
 ```
 
 ### vTourMethods
@@ -178,6 +178,6 @@ This callback method notifies when autoplay has been stopped using vTourView sto
 11. -(void)autoplayStopped;
 ```
 
-###Steps for VR Mode
+### Steps for VR Mode
 
 1. In order to use VR Mode, create another View Controller for VR Mode. In the VRController, declare an object of VRModeView and add it to VRController. VRController should be called from ViewController by first calling pause method of vTourView and resume method should be called in viewDidAppear of ViewController when returning from VRController to View Controller, and deleteTourAndGetSceneNumber should be called before coming back to ViewController from VRController.
