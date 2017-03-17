@@ -18,5 +18,7 @@ typedef enum {
     BOOL makeVRButtonVisible;
     BOOL makeAutoplayOn;
     UI_DESIGN design;
+    NSString *jsonBaseURL;
+    NSString *imageBaseURL;
 }
 @end
