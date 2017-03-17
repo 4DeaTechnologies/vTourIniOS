@@ -13,17 +13,13 @@
 		1C3559DB1E7BB0040082F427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559D91E7BB0040082F427 /* LaunchScreen.storyboard */; };
 		1C3559EE1E7BB04C0082F427 /* 4DeavTourLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */; };
 		1C3559EF1E7BB04C0082F427 /* 4DeavTourLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */; };
-		1C3559F01E7BB04C0082F427 /* DemoConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3559E51E7BB04C0082F427 /* DemoConstants.m */; };
-		1C3559F11E7BB04C0082F427 /* HotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3559E71E7BB04C0082F427 /* HotelViewController.m */; };
-		1C3559F21E7BB04C0082F427 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3559E91E7BB04C0082F427 /* ViewController.m */; };
-		1C3559F31E7BB04C0082F427 /* VRController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3559EB1E7BB04C0082F427 /* VRController.m */; };
-		1C3559F41E7BB04C0082F427 /* vTourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3559ED1E7BB04C0082F427 /* vTourController.m */; };
 		1C3559FA1E7BB0660082F427 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F51E7BB0660082F427 /* GoogleService-Info.plist */; };
 		1C3559FB1E7BB0660082F427 /* Hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F61E7BB0660082F427 /* Hotels.json */; };
 		1C3559FC1E7BB0660082F427 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F71E7BB0660082F427 /* left.png */; };
 		1C3559FD1E7BB0660082F427 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F81E7BB0660082F427 /* right.png */; };
 		1C3559FE1E7BB0660082F427 /* thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C3559F91E7BB0660082F427 /* thumb.jpg */; };
 		1C355A021E7BB1980082F427 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C355A011E7BB1980082F427 /* AppDelegate.m */; };
+		1C355A051E7BB34A0082F427 /* SimplevTourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C355A041E7BB34A0082F427 /* SimplevTourController.m */; };
 		3A84D749E22D828BF6FC4297 /* libPods-4DeavTourDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7188A7C0E82E12BC6862DCB7 /* libPods-4DeavTourDemoApp.a */; };
 /* End PBXBuildFile section */
 
@@ -36,16 +32,6 @@
 		1C3559DC1E7BB0040082F427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = 4DeavTourLibrary.bundle; sourceTree = "<group>"; };
 		1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = 4DeavTourLibrary.framework; sourceTree = "<group>"; };
-		1C3559E41E7BB04C0082F427 /* DemoConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoConstants.h; sourceTree = "<group>"; };
-		1C3559E51E7BB04C0082F427 /* DemoConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoConstants.m; sourceTree = "<group>"; };
-		1C3559E61E7BB04C0082F427 /* HotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelViewController.h; sourceTree = "<group>"; };
-		1C3559E71E7BB04C0082F427 /* HotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelViewController.m; sourceTree = "<group>"; };
-		1C3559E81E7BB04C0082F427 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1C3559E91E7BB04C0082F427 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1C3559EA1E7BB04C0082F427 /* VRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRController.h; sourceTree = "<group>"; };
-		1C3559EB1E7BB04C0082F427 /* VRController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRController.m; sourceTree = "<group>"; };
-		1C3559EC1E7BB04C0082F427 /* vTourController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vTourController.h; sourceTree = "<group>"; };
-		1C3559ED1E7BB04C0082F427 /* vTourController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vTourController.m; sourceTree = "<group>"; };
 		1C3559F51E7BB0660082F427 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1C3559F61E7BB0660082F427 /* Hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Hotels.json; sourceTree = "<group>"; };
 		1C3559F71E7BB0660082F427 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
@@ -53,6 +39,8 @@
 		1C3559F91E7BB0660082F427 /* thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb.jpg; sourceTree = "<group>"; };
 		1C355A001E7BB1980082F427 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1C355A011E7BB1980082F427 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1C355A031E7BB34A0082F427 /* SimplevTourController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplevTourController.h; sourceTree = "<group>"; };
+		1C355A041E7BB34A0082F427 /* SimplevTourController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplevTourController.m; sourceTree = "<group>"; };
 		7188A7C0E82E12BC6862DCB7 /* libPods-4DeavTourDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-4DeavTourDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4C02A22F914B26C0CCA0ED /* Pods-4DeavTourDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-4DeavTourDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-4DeavTourDemoApp/Pods-4DeavTourDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ECA5C33D56F8439E153447F5 /* Pods-4DeavTourDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-4DeavTourDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-4DeavTourDemoApp/Pods-4DeavTourDemoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,16 +84,8 @@
 				1C355A011E7BB1980082F427 /* AppDelegate.m */,
 				1C3559E21E7BB04C0082F427 /* 4DeavTourLibrary.bundle */,
 				1C3559E31E7BB04C0082F427 /* 4DeavTourLibrary.framework */,
-				1C3559E41E7BB04C0082F427 /* DemoConstants.h */,
-				1C3559E51E7BB04C0082F427 /* DemoConstants.m */,
-				1C3559E61E7BB04C0082F427 /* HotelViewController.h */,
-				1C3559E71E7BB04C0082F427 /* HotelViewController.m */,
-				1C3559E81E7BB04C0082F427 /* ViewController.h */,
-				1C3559E91E7BB04C0082F427 /* ViewController.m */,
-				1C3559EA1E7BB04C0082F427 /* VRController.h */,
-				1C3559EB1E7BB04C0082F427 /* VRController.m */,
-				1C3559EC1E7BB04C0082F427 /* vTourController.h */,
-				1C3559ED1E7BB04C0082F427 /* vTourController.m */,
+				1C355A031E7BB34A0082F427 /* SimplevTourController.h */,
+				1C355A041E7BB34A0082F427 /* SimplevTourController.m */,
 				1C3559CB1E7BB0040082F427 /* Supporting Files */,
 			);
 			path = 4DeavTourDemoApp;
@@ -282,12 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3559F01E7BB04C0082F427 /* DemoConstants.m in Sources */,
+				1C355A051E7BB34A0082F427 /* SimplevTourController.m in Sources */,
 				1C3559CD1E7BB0040082F427 /* main.m in Sources */,
-				1C3559F41E7BB04C0082F427 /* vTourController.m in Sources */,
-				1C3559F11E7BB04C0082F427 /* HotelViewController.m in Sources */,
-				1C3559F21E7BB04C0082F427 /* ViewController.m in Sources */,
-				1C3559F31E7BB04C0082F427 /* VRController.m in Sources */,
 				1C355A021E7BB1980082F427 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
