@@ -17,7 +17,7 @@
         makeVRButtonVisible = FALSE;
         makeGyroButtonVisible = FALSE;
         makeAutoplayOn = FALSE;
-        design = DESIGN1;
+        design = DESIGN2;
     }
     return self;
 }
