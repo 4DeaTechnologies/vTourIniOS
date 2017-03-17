@@ -7,10 +7,9 @@
 //
 
 #import "VRController.h"
-#import <4DeavTourLibrary/VRModeView.h>
+#import <GLKit/GLKit.h>
 
 @interface VRController ()
-@property (nonatomic,strong) VRModeView *vrModeView;
 @end
 
 @implementation VRController
@@ -21,9 +20,7 @@
     CGAffineTransform landscapeTransform = CGAffineTransformMakeRotation(GLKMathDegreesToRadians(90));
     [self.view setTransform:landscapeTransform];
 
-    self.vrModeView = [[VRModeView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) withSceneNumber:0 withDelegate:self];
-    [self.view addSubview:self.vrModeView];
-    
+   
     UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
     [backButton setImage:[UIImage imageNamed:@"left.png"] forState:UIControlStateNormal];
     [backButton setCenter:CGPointMake(0.1*self.view.frame.size.width, 0.1*self.view.frame.size.height)];
@@ -37,7 +34,6 @@
 
 
 -(void)onBackPressed{
-    [self.vrModeView deleteTourAndGetSceneNumber];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

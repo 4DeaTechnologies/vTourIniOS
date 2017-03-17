@@ -7,12 +7,11 @@
 //
 
 #import "vTourController.h"
-#import <4DeavTourLibrary/vTourView.h>
 #import <Google/Analytics.h>
 #import "DemoConstants.h"
 #import "VRController.h"
 
-@interface vTourController ()<ViewerControllerProtocol,UICollectionViewDelegate,UICollectionViewDataSource>{
+@interface vTourController ()<UICollectionViewDelegate,UICollectionViewDataSource>{
     UITextView *textView;
     int currentScene;
     NSDate *startTime;
@@ -22,7 +21,6 @@
     DemoConstants *demoConstants;
 }
 @property (nonatomic,strong) NSDictionary *hotelsData;
-@property (nonatomic,strong) vTourView *vtourView;
 @end
 
 @implementation vTourController
@@ -42,31 +40,7 @@
     self.hotelsData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     // Do any additional setup after loading the view.
-    [self setupvTourView];
     [self setupUI];
-}
-
-
--(void)setupvTourView{
-    self.vtourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
-    [self.view addSubview:self.vtourView];
-    [self.vtourView setBaseURL:@"https://s3.eu-central-1.amazonaws.com/4dea-development-commonpanos/vtour/"]; //Pass baseURL of cleartrip web server structure
-    [self.vtourView setJSONBaseURL:@"https://s3.eu-central-1.amazonaws.com/testingpurpose4dea/vtour/"];
-    
-    NSInteger hotelNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"Hotel_Number"];
-    NSArray *hotels = [self.hotelsData objectForKey:@"Hotels"];
-    NSDictionary *hotel = [hotels objectAtIndex:hotelNumber];
-    
-    [self.vtourView setShortURL:[hotel objectForKey:@"ShortURL"]];
-    //JSON URL would be something like: BaseURL + ShortURL + "/tourData.json"
-    // For Example: "https://cdn.cleartrip.com/" + "Polo_Forest" + "/tourData.json"
-    
-    //Images URL would be something like: BaseURL + ShortURL + "/Images/" + SceneName + "Thumbnail/thumb.jpg"
-    // For Example: "https://cdn.cleartrip.com/" + "Polo_Forest" + "/Images/" + "0ojas.jpg" + "Thumbnail/thumb.jpg"
-    
-    [self.vtourView enableArrow];
-    [self.vtourView setUserSwipeSpeed:2];
-    [self.vtourView downloadTourForUrl];
 }
 
 -(void)setupUI{
@@ -114,77 +88,21 @@
     }
 }
 
-#pragma mark - Protocol Callback Methods
-
--(void)thumbnailsURL:(NSArray *)thumbnailsURLs
-{
-    [self startDownloadingThumbnails:thumbnailsURLs];
-}
-
--(void)onLowQualityLoaded{
-    [textView removeFromSuperview];
-}
-
--(void)sceneLoaded{
-    if(!demoConstants->makeAutoplayOn){
-        [self.vtourView stopAutoplay];
-    }
-}
--(void)percentLoaded:(float)percent{
-
-}
-
--(void)tapInTourScene{
-
-}
-
-
--(void)onAutoplayCompleted{
-
-}
-
--(void)onTourDataLoaded{
-    currentScene = [self.vtourView getCurrentScene];
-    startTime = [NSDate date];
-}
--(void)onArrowClicked{
-    
-}
--(void)onSceneChange{
-    NSTimeInterval timeInterval = fabs([startTime timeIntervalSinceNow]);
-    [self timeSpent:timeInterval inSceneNumber:currentScene];
-    currentScene = [self.vtourView getCurrentScene];
-    startTime = [NSDate date];
-    [self.view addSubview:textView];
-}
-
--(void)onFailedToLoadTourData{
-    
-}
-
--(void)autoplayStopped{
-    
-}
-
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [self.vtourView deleteTour]; //Tour dealloction method. (Required)
 }
 
 -(void)gyroClicked{
-    [self.vtourView setGyroscopeOnOff];
+    
 }
 
 -(void)vrClicked{
-    [self.vtourView pause];
     VRController *vrController = [[VRController alloc]init];
     [self presentViewController:vrController animated:YES completion:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    if(self.vtourView!=nil){
-        [self.vtourView resume];
-    }
+    
 }
 
 #pragma mark - Sending data to Google Analytics
@@ -294,6 +212,7 @@
     cell.layer.masksToBounds = YES;
     cell.layer.borderWidth = 1;
     cell.layer.cornerRadius = 6;
+    cell.backgroundColor = [UIColor lightGrayColor];
     cell.layer.borderColor = [UIColor blackColor].CGColor;
     return cell;
 }
@@ -306,7 +225,6 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     NSLog(@"Selecting item at index: %ld",(long)indexPath.item);
-    [self.vtourView changeSceneToSceneNumer:(int)indexPath.item];
 }
 
 #pragma mark - Design 2
@@ -359,18 +277,11 @@
 }
 
 -(void)leftArrowClicked{
-    int currentSceneNumber = [self.vtourView getCurrentScene];
-    if(currentSceneNumber!=0){
-        [self.vtourView changeSceneToSceneNumer:currentSceneNumber-1];
-    }
+    
 }
 
 -(void)rightArrowCliced{
-    NSArray *scenesArray = [self.vtourView getSceneNames];
-    int currentSceneNumber = [self.vtourView getCurrentScene];
-    if(currentSceneNumber<scenesArray.count-1){
-         [self.vtourView changeSceneToSceneNumer:currentSceneNumber+1];
-    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
