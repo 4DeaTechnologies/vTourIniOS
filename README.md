@@ -7,7 +7,9 @@
 
 3. Now, declare an object of vTourView and set the options for vTourView to download your tour. Options include setting the JSONBaseURL, ImagesBaseURL and ShortURL for the tour. Finally, add the vTourView to your ViewController and call downloadTourForUrl of vTourView.
 
-4. And, that's it. You have your own vTour embedded in your own app.
+4. vTourLibrary requires SDWebImage to be integrated in your app, so install SDWebImage using CocoaPods in your project. (https://github.com/rs/SDWebImage)
+
+5. And, that's it. You have your own vTour embedded in your own app.
 
 ## Mandatory Options to set before downloading vTour
 
