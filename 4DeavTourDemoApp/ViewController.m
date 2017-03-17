@@ -109,13 +109,13 @@
     [hotelName setText:[hotel objectForKey:@"Title"]];
     [hotelName setScrollEnabled:FALSE];
     [hotelName setEditable:FALSE];
-    [hotelName setFont:[UIFont fontWithName:@"Helvetica-Bold" size:13.0]];
+    [hotelName setFont:[UIFont fontWithName:@"Helvetica-Bold" size:16.0]];
     
     [v addSubview:hotelName];
     
     UITextView *hotelPrice = [[UITextView alloc]initWithFrame:CGRectMake(0.35*cell.bounds.size.width, 0.5*cell.bounds.size.height, 0.65*cell.bounds.size.width, 0.2*cell.bounds.size.height)];
     [hotelPrice setText:@"Price Rs. 5000"];
-    [hotelPrice setFont:[UIFont fontWithName:@"Helvetica" size:12.0]];
+    [hotelPrice setFont:[UIFont fontWithName:@"Helvetica" size:16.0]];
     [hotelPrice setEditable:FALSE];
     [hotelPrice setScrollEnabled:FALSE];
     
