@@ -28,10 +28,7 @@
 
 -(void)setupvTourView{
     self.myvTourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
-    [self.myvTourView setBaseURL:self.demoConstants->imageBaseURL]; //Pass baseURL of cleartrip web server structure
-    [self.myvTourView setJSONBaseURL:self.demoConstants->jsonBaseURL];
     [self.myvTourView setShortURL:@"TGBHotels_Ahmedabad"];
-    [self.myvTourView setUserSwipeSpeed:2];
     [self.myvTourView downloadTourForUrl];
     
     [self.view addSubview:self.myvTourView];
