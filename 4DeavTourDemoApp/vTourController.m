@@ -200,7 +200,7 @@
     
     [tracker send:[[GAIDictionaryBuilder createTimingWithCategory:category
                                                          interval:@((NSUInteger)(timeSpent * 1000))
-                                                             name:[category stringByAppendingString:[@"Scene - " stringByAppendingString:[NSString stringWithFormat:@"%d",sceneNumber]]]
+                                                             name:[category stringByAppendingString:[@" - Scene - " stringByAppendingString:[NSString stringWithFormat:@"%d",sceneNumber]]]
                                                             label:nil] build]];
 }
 
