@@ -52,8 +52,6 @@
 -(void)setupvTourView{
     self.vtourView = [[vTourView alloc]initWithFrame:self.view.frame withDelegate:self];
     [self.view addSubview:self.vtourView];
-    [self.vtourView setBaseURL:demoConstants->imageBaseURL]; //Pass baseURL of cleartrip web server structure
-    [self.vtourView setJSONBaseURL:demoConstants->jsonBaseURL];
     
     NSInteger hotelNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"Hotel_Number"];
     NSArray *hotels = [self.hotelsData objectForKey:@"Hotels"];
